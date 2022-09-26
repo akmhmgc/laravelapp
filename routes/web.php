@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 // 無名関数の返り値にhtmlを返せばOK
-Route::get('hello/{msg}', function ($msg) {
+Route::get('hello/{msg}', function (int $msg) { // 受け取る型を指定することができる
 
     $html = <<<EOF
     <html>
