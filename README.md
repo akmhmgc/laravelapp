@@ -29,3 +29,34 @@ test();
     ```sh
     $ php -S localhost:8000 -t public server.php
     ```
+
+- コントローラーとviewが対応しているわけではなくルートやコントローラーから好きなviewを返すことができる
+    - 規約が弱め？
+
+```php
+// Routeから直接viewを返している
+Route::get('hello', function() {
+    return view('hello.index');
+ });
+```
+
+```php
+# controller
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
+class HelloController extends Controller
+{
+
+    public function index(Request $request, Response $response)
+    {
+        // コントローラーから指定したviewを返すことも可能
+        return view('hello.index');
+    }
+}
+```
+
