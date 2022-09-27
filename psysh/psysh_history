@@ -10,3 +10,16 @@ whereami\040-n2
 exit
 whereami\040-n2
 $response\040
+exit
+whereami\040-n2
+$request
+$response\040`
+$response\040
+$response->setContent()
+$response->setContent('hoge')
+$html
+$response->setContent($htmlk)
+$response->setContent($htmll)
+$response->setContent($html)
+$html
+$response->setContent($html)
