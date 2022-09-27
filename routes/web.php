@@ -19,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 // routeで{}を使って指定した順番でコントローラーのメソッドに渡される
-Route::get('hello', [HelloController::class, 'index']);
-Route::get('ohter', [HelloController::class, 'other']);
+Route::get('hello', HelloController::class);
+
