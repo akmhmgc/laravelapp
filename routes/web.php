@@ -18,5 +18,5 @@ use App\Http\Controllers\HelloController;
 Route::get('/', function () {
     return view('welcome');
 });
-// 無名関数の返り値にhtmlを返せばOK
-Route::get('hello', [HelloController::class, 'index']);
+// routeで{}を使って指定した順番でコントローラーのメソッドに渡される
+Route::get('hello/{id?}/{pass?}', [HelloController::class, 'index']);
