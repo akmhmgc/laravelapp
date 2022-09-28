@@ -1,17 +1,17 @@
-<body>
-    <h1>Blade/Index</h1>
-    @if ($name == '')
-    <p>名前を入力してください</p>
-    @else
-    <p>こんにちは{{ $name }}さん</p>
-    @endif
+@extends('layouts.helloapp')
 
-    @isset ( $hoge )
-    <p>変数hoge: {{$hoge}}</p>
-    @endisset
-    <form method="POST" action="/hello">
-        @csrf
-        <input type="text" name="name">
-        <input type="submit">
-    </form>
-</body>
+@section('title', 'タイトル')
+
+@section('menubar')
+   @parent
+   インデックスページ
+@endsection
+
+@section('content')
+   <p>ここが本文のコンテンツです。</p>
+   <p>必要なだけ記述できます。</p>
+@endsection
+
+@section('footer')
+copyright 2020 tuyano.
+@endsection
