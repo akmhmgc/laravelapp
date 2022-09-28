@@ -78,3 +78,5 @@ $user = new User;
 $user->name = '太郎';
 $user->greeting(); #=> 私の名前は太郎です
 ```
+
+- view内で定義されていない変数を参照しようとするとエラーになる
