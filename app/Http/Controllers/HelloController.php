@@ -15,4 +15,15 @@ class HelloController extends Controller
         ];
         return view('hello.index', $data);
     }
+
+    public function post(Request $request)
+    {
+        eval(\Psy\sh());
+        // フォームからの送信の受け取り方
+        $name = $request->name;
+        $data = [
+            'msg' => "こんにちは" . $name . 'さん',
+        ];
+        return view('hello.index', $data);
+    }
 }
