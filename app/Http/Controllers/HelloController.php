@@ -12,6 +12,7 @@ class HelloController extends Controller
     {
         $data = [
             'name' => '',
+            'hoge' => 'hoge'
         ];
         return view('hello.index', $data);
     }
@@ -21,7 +22,7 @@ class HelloController extends Controller
         // フォームからの送信の受け取り方
         $name = $request->name;
         $data = [
-            'name' => $name
+            'name' => $name,
         ];
         return view('hello.index', $data);
     }

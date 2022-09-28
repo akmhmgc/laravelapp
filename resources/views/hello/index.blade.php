@@ -5,6 +5,10 @@
     @else
     <p>こんにちは{{ $name }}さん</p>
     @endif
+
+    @isset ( $hoge )
+    <p>変数hoge: {{$hoge}}</p>
+    @endisset
     <form method="POST" action="/hello">
         @csrf
         <input type="text" name="name">
