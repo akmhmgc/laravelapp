@@ -11,18 +11,17 @@ class HelloController extends Controller
     public function index()
     {
         $data = [
-            'msg' => 'これはBladeを利用したサンプルです',
+            'name' => '',
         ];
         return view('hello.index', $data);
     }
 
     public function post(Request $request)
     {
-        eval(\Psy\sh());
         // フォームからの送信の受け取り方
         $name = $request->name;
         $data = [
-            'msg' => "こんにちは" . $name . 'さん',
+            'name' => $name
         ];
         return view('hello.index', $data);
     }
