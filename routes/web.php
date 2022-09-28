@@ -18,9 +18,5 @@ use App\Http\Controllers\HelloController;
 Route::get('/', function () {
     return view('welcome');
 });
-// routeで{}を使って指定した順番でコントローラーのメソッドに渡される
-// Route::get('hello', [HelloController::class, 'index']);
-Route::get('hello', function() {
-    return view('hello.index');
- });
+Route::get('hello', [HelloController::class, 'index']);
 
