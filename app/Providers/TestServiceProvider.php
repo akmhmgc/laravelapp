@@ -27,12 +27,9 @@ class TestServiceProvider extends ServiceProvider
 
         // サービスプロバイダにビューコンポーザーを登録している
         View::composer(
-            'hello.index',
-            function ($view) {
-                // view_messageという変数名で'composer message'を渡している
-                $view->with('view_message', 'composer message!');
-                $view->with('hoge', 'ほげほげ');
-            }
+            'hello.index','App\Http\Composers\HelloComposer'
         );
     }
 }
+
+
