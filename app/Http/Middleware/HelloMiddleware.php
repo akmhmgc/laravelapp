@@ -11,7 +11,6 @@ class HelloMiddleware
     {
         // レスポンスの編集
         $response = $next($request);
-        eval(\Psy\sh());
         $content = $response->content();
 
         $pattern = '/<middleware>(.*)<\/middleware>/i';
