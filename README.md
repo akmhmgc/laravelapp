@@ -104,3 +104,9 @@ $user->greeting(); #=> 私の名前は太郎です
 ## 4-3 バリデーションをカスタマイズする
 - フォームリクエスト
     - コントローラーとバリデーションを切り分けるのが目的
+    - リクエストが拡張されたものっぽい
+    ```php
+    class FormRequest extends Request implements ValidatesWhenResolved
+    ...
+    ```
+
