@@ -35,7 +35,7 @@ class HelloController extends Controller
         if ($validator->fails()) {
             return redirect('/hello') // リダイレクトする場所を表示
                 ->withErrors($validator)
-                ->withInput();
+                ->withInput(); // 入力されたinputをそのまま付加してリダイレクトする
         }
 
         return view('hello.index', ['msg' => '正しく入力されました！']);
