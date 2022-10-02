@@ -109,4 +109,8 @@ $user->greeting(); #=> 私の名前は太郎です
     class FormRequest extends Request implements ValidatesWhenResolved
     ...
     ```
+    
+- バリデータの利用
+    - バリデーション機能を利用すると、エラーが出た時に自動にフォームにもどるがそれを避けたい時やフォームににゅうりょくされた値以外でバリデーションをかけたい時などにバリデータを利用すると良い
+
 
