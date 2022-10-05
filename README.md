@@ -124,3 +124,10 @@ $user->greeting(); #=> 私の名前は太郎です
 ```php
 DB::table('people')->where('id','<','10')->get()
 ```
+
+- 複数の条件を指定できるWhereRaw
+```php
+DB::table('people')->whereRaw('id < ? and age < ?' , [10, 99])
+```
+
+
