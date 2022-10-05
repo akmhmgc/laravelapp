@@ -130,4 +130,8 @@ DB::table('people')->where('id','<','10')->get()
 DB::table('people')->whereRaw('id < ? and age < ?' , [10, 99])
 ```
 
+- where->updateで複数データを一括でupdateできてしまう
 
+```php
+DB::table('people')->where('id', '<', '10')->update(['age'=> 10])
+```
