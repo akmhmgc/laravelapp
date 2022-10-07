@@ -9,33 +9,19 @@ use App\Scopes\ScopePerson;
 
 class Person extends Model
 {
-    protected static function boot()
-    {
-        // super的な感じっぽい？
-        parent::boot();
+    // モデル側で自動で用意する項目
+    protected $guarded = array('id');
 
-        static::addGlobalScope(new ScopePerson);
-    }
+    // バリデーションのルール
+    public static $rules = array(
+        'name' => 'required',
+        'mail' => 'email',
+        'age' => 'integer|min:0|max:150'
+    );
 
+    // getDataは残しておく
     public function getData()
     {
         return $this->id . ': ' . $this->name . ' (' . $this->age . ')';
-    }
-
-    // スコープの追加
-    public function scopeNameEqual($query, $str)
-    {
-        eval(\Psy\sh());
-        return $query->where('name', $str);
-    }
-
-    public function scopeAgeGreaterThan($query, $n)
-    {
-        return $query->where('age', '>=', $n);
-    }
-
-    public function scopeAgeLessThan($query, $n)
-    {
-        return $query->where('age', '<=', $n);
     }
 }
