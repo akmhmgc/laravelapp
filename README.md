@@ -135,3 +135,8 @@ DB::table('people')->whereRaw('id < ? and age < ?' , [10, 99])
 ```php
 DB::table('people')->where('id', '<', '10')->update(['age'=> 10])
 ```
+
+staticプロパティへのアクセス
+```php
+ Person::$rules
+```
