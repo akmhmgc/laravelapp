@@ -17,6 +17,22 @@ class PersonController extends Controller
         return view('person.find', ['input' => '']);
     }
 
+    public function add(Request $request)
+    {
+        return view('person.add', ['input' => '']);
+    }
+
+    public function create(Request $request)
+    {
+        // バリデーションの実行
+        $this->validate($request, Person::$rules);
+        $person = new Person;
+        $form = $request->all();
+        unset($form['_token']);
+        $person->fill($form)->save();
+        return redirect('/person');
+    }
+
     public function search(Request $request)
     {
         $min = $request->input * 1;
