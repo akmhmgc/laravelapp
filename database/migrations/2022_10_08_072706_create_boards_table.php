@@ -19,7 +19,6 @@ class CreateBoardsTable extends Migration
             $table->integer('person_id');
             $table->string('title');
             $table->string('message');
-            $table->timestamps();
         });
     }
 
