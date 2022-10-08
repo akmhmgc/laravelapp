@@ -22,6 +22,8 @@ class Board extends Model
             . $this->person->name . ')';
     }
 
+    // 関連モデルを呼び出すときはメソッドとして()をつける必要はない
+    // Board::find(1)->person みたいな感じでOK
     public function person()
     {
         return $this->belongsTo('App\Models\Person');
