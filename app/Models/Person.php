@@ -27,6 +27,6 @@ class Person extends Model
 
     // リレーションの記述
     public function board(){
-        return $this->hasOne('App\Borad');
+        return $this->hasOne('App\Models\Board');
     }
 }
